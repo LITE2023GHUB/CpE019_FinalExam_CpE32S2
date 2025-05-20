@@ -10,7 +10,7 @@ from PIL import Image
 
 # -- Configuration --
 st.write("Python version:", sys.version)
-MODEL_URL = "https://drive.google.com/file/d/10j5UikpbPJfaNRcW04_eBdTeuWum4Ozw/view?usp=sharing"
+MODEL_URL = "https://drive.google.com/uc?export=download&id=10j5UikpbPJfaNRcW04_eBdTeuWum4Ozw"
 MODEL_PATH = "weather_classification_mobilenetv2_95pct.h5"
 IMG_SIZE = (224, 224)  # Input size for MobileNetV2
 CLASS_NAMES = ['Cloudy', 'Rainy', 'Shine', 'Sunrise']  # Update if you used different labels
