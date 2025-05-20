@@ -7,7 +7,7 @@ from tensorflow.keras.preprocessing import image
 from PIL import Image
 
 # -- Streamlit page config MUST be the very first Streamlit command --
-st.set_page_config(page_title="Weather Classifier 🌤️", layout="centered")
+st.set_page_config(page_title="Weather Classifier", layout="centered")
 
 # -- Configuration --
 MODEL_URL = "https://drive.google.com/uc?export=download&id=10j5UikpbPJfaNRcW04_eBdTeuWum4Ozw"
@@ -19,7 +19,7 @@ CLASS_NAMES = ['Cloudy', 'Rainy', 'Shine', 'Sunrise']  # Update if you used diff
 @st.cache_resource
 def download_and_load_model():
     if not os.path.exists(MODEL_PATH):
-        with st.spinner("⬇️ Downloading model..."):
+        with st.spinner("Downloading model..."):
             urllib.request.urlretrieve(MODEL_URL, MODEL_PATH)
     model = load_model(MODEL_PATH)
     return model
@@ -27,7 +27,7 @@ def download_and_load_model():
 model = download_and_load_model()
 
 # -- Streamlit UI --
-st.title("🌦️ Weather Image Classifier")
+st.title("Weather Image Classifier")
 st.write("Upload an image to classify it as one of the weather conditions.")
 
 uploaded_file = st.file_uploader("Upload a weather image...", type=["jpg", "jpeg", "png"])
@@ -43,7 +43,7 @@ if uploaded_file is not None:
     img_array /= 255.0
 
     # Predict
-    with st.spinner("🔍 Classifying..."):
+    with st.spinner("Classifying..."):
         prediction = model.predict(img_array)[0]
         predicted_class = CLASS_NAMES[np.argmax(prediction)]
         confidence = np.max(prediction) * 100
