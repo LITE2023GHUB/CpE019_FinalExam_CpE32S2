@@ -8,11 +8,14 @@ import streamlit as st
 import numpy as np
 import os
 import urllib.request
+import sys
+import streamlit as st
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from PIL import Image
 
 # -- Configuration --
+st.write("Python version:", sys.version)
 MODEL_URL = "https://drive.google.com/file/d/10j5UikpbPJfaNRcW04_eBdTeuWum4Ozw/view?usp=sharing"
 MODEL_PATH = "weather_model.h5"
 IMG_SIZE = (224, 224)  # Input size for MobileNetV2
