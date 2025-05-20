@@ -2,11 +2,12 @@ import streamlit as st
 import numpy as np
 import os
 import urllib.request
-import sys
-import streamlit as st
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from PIL import Image
+
+# -- Streamlit page config MUST be the very first Streamlit command --
+st.set_page_config(page_title="Weather Classifier 🌤️", layout="centered")
 
 # -- Configuration --
 MODEL_URL = "https://drive.google.com/uc?export=download&id=10j5UikpbPJfaNRcW04_eBdTeuWum4Ozw"
@@ -26,7 +27,6 @@ def download_and_load_model():
 model = download_and_load_model()
 
 # -- Streamlit UI --
-st.set_page_config(page_title="Weather Classifier 🌤️", layout="centered")
 st.title("🌦️ Weather Image Classifier")
 st.write("Upload an image to classify it as one of the weather conditions.")
 
