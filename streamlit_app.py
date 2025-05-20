@@ -6,7 +6,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from PIL import Image
 
-MODEL_URL = "https://drive.google.com/uc?id=YOUR_FILE_ID"
+MODEL_URL = "https://drive.google.com/file/d/10j5UikpbPJfaNRcW04_eBdTeuWum4Ozw/view?usp=sharing"
 MODEL_PATH = "weather_model.h5"
 
 @st.cache_resource
