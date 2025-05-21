@@ -27,10 +27,10 @@ def download_and_load_model():
 model = download_and_load_model()
 
 # -- Streamlit UI --
-st.title("Weather Image Classifier")
-st.write("Upload an image to classify it as one of the weather conditions.")
+st.title("Magnait, Marv_Weather Image Classifier")
+st.write("Upload an image to identify the weather conditions.")
 
-uploaded_file = st.file_uploader("Upload a weather image...", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Upload image here", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
     img = Image.open(uploaded_file).convert('RGB')
